@@ -2,7 +2,7 @@
 
 To startup Pocketbase run executable in `./pocketbase/`
 
-In `./wip-startuphack/` run
+In `./app/` run
 
 ```sh
 pnpm i
