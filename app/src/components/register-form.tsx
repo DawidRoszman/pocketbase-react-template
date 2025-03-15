@@ -21,9 +21,9 @@ import * as z from 'zod';
 
 const formSchema = z.object({
   name: z.string().min(1),
-  email: z.string(),
-  password: z.string(),
-  passwordConfirm: z.string(),
+  email: z.string().email(),
+  password: z.string().min(4),
+  passwordConfirm: z.string().min(4),
 });
 
 export default function RegisterForm() {
@@ -41,6 +41,13 @@ export default function RegisterForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    if (values.password !== values.passwordConfirm) {
+      toast.error('Passwords do not match');
+      form.setError('passwordConfirm', {
+        message: 'Passwords do not match',
+      });
+      return;
+    }
     try {
       console.log(values);
       auth
