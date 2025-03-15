@@ -1,6 +1,6 @@
 interface Post {
-    id: string;
-    description: string;
+  id: string;
+  description: string;
 }
 
 export default Post;
