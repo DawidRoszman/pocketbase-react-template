@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="bg-primary text-primary-foreground flex justify-between px-10 py-2">
       <div>
-        <p>Navbar</p>
+        <Link to="/">Home</Link>
       </div>
       <div>
         {auth.isLoggedIn ? (
