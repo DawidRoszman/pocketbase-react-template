@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 // Import the generated route tree
+import { AuthProvider } from './context/auth/auth-provider';
 import { routeTree } from './routeTree.gen';
-import { AuthProvider } from './context/auth/AuthProvider';
 
 // Create a new router instance
 const router = createRouter({ routeTree });

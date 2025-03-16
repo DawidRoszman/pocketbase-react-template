@@ -1,11 +1,10 @@
-import UserRegisterDto from '@/models/UserRegisterDto';
+import pb from '@/db/conn';
+import UserRegisterDto from '@/models/dto/user-register-dto';
 import { AuthRecord } from 'pocketbase';
 import { useMemo, useState } from 'react';
-import { AuthContext } from './AuthContext';
-import pb from '@/db/conn';
+import { AuthContext } from './auth-context';
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-
   const [isLoggedIn, setIsLoggedIn] = useState(pb.authStore.isValid);
   const [user, setUser] = useState<AuthRecord | null>(
     pb.authStore.record || null

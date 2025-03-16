@@ -1,7 +1,6 @@
-import UserRegisterDto from '@/models/UserRegisterDto';
+import UserRegisterDto from '@/models/dto/user-register-dto';
 import { AuthRecord } from 'pocketbase';
 import { createContext } from 'react';
-
 
 export const AuthContext = createContext<{
   isLoggedIn: boolean;
@@ -12,9 +11,7 @@ export const AuthContext = createContext<{
 }>({
   isLoggedIn: false,
   user: null,
-  login: async () => { },
-  logout: () => { },
-  register: async () => { },
+  login: async () => {},
+  logout: () => {},
+  register: async () => {},
 });
-
-

@@ -10,8 +10,8 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
-import { AuthContext } from '@/context/auth/AuthContext';
-import UserRegisterDto from '@/models/UserRegisterDto';
+import { AuthContext } from '@/context/auth/auth-context';
+import UserRegisterDto from '@/models/dto/user-register-dto';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from '@tanstack/react-router';
 import { useContext } from 'react';

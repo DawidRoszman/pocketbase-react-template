@@ -15,9 +15,9 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
+import { AuthContext } from '@/context/auth/auth-context';
 import { useNavigate } from '@tanstack/react-router';
 import { useContext } from 'react';
-import { AuthContext } from '@/context/auth/AuthContext';
 
 const formSchema = z.object({
   email: z.string().min(1).email(),

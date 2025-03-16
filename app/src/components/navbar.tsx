@@ -1,7 +1,7 @@
+import { AuthContext } from '@/context/auth/auth-context';
 import { Link } from '@tanstack/react-router';
 import { useContext } from 'react';
 import { Button } from './ui/button';
-import { AuthContext } from '@/context/auth/AuthContext';
 
 const Navbar = () => {
   const auth = useContext(AuthContext);
