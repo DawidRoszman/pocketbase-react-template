@@ -15,6 +15,7 @@ function RouteComponent() {
   useEffect(() => {
     getAllPosts().then((posts) => setPosts(posts));
   }, []);
+
   return (
     <div>
       <div>
