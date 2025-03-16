@@ -1,7 +1,7 @@
 import pb from '@/db/conn';
 import UserRegisterDto from '@/models/dto/user-register-dto';
 import { AuthRecord } from 'pocketbase';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AuthContext } from './auth-context';
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
@@ -9,6 +9,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<AuthRecord | null>(
     pb.authStore.record || null
   );
+
+  useEffect(() => {
+    const authRefresh = async () => {
+      const authData = await pb.collection('users').authRefresh();
+      console.log(authData);
+      setUser(authData.record);
+      setIsLoggedIn(pb.authStore.isValid);
+    };
+    authRefresh();
+  }, []);
 
   const getUser = useMemo(() => {
     const login = async (email: string, password: string) => {
