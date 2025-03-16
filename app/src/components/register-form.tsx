@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
-import { AuthContext } from '@/context/AuthContext';
+import { AuthContext } from '@/context/auth/AuthContext';
 import UserRegisterDto from '@/models/UserRegisterDto';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from '@tanstack/react-router';
@@ -49,7 +49,6 @@ export default function RegisterForm() {
       return;
     }
     try {
-      console.log(values);
       auth
         .register(values as UserRegisterDto)
         .then(() => {

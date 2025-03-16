@@ -1,4 +1,4 @@
-import { AuthContext } from '@/context/AuthContext';
+import { AuthContext } from '@/context/auth/AuthContext';
 import getAllPosts from '@/hooks/getAllPosts';
 import Post from '@/models/Post';
 import { createFileRoute } from '@tanstack/react-router';
