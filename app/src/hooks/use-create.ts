@@ -1,9 +1,9 @@
 import pb from '@/db/conn';
-import ProductCreateDto from '@/models/dto/product-create-dto';
+import Post from '@/models/post';
 import { ClientResponseError } from 'pocketbase';
 import { useState } from 'react';
 
-type Data = ProductCreateDto;
+type Data = Post;
 const useCreate = (collectionPath: string) => {
   const [isDataAdded, setDataAdded] = useState(false);
   const [error, setError] = useState<ClientResponseError | null>(null);
